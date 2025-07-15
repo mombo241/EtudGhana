@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Université - EtudGhana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>html { scroll-behavior: smooth; }</style>
+  <style>
+    html { scroll-behavior: smooth; }
+    .section-nav-link.active {
+      background-color: #2563eb;
+      color: #fff;
+    }
+  </style>
+  <script>
+    // Scrollspy effect for section nav
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('.section-nav-link');
+      const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
+      function onScroll() {
+        let scrollPos = window.scrollY + 120;
+        let found = false;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          if (sections[i] && scrollPos >= sections[i].offsetTop) {
+            links.forEach(l => l.classList.remove('active'));
+            links[i].classList.add('active');
+            found = true;
+            break;
+          }
+        }
+        if (!found) links.forEach(l => l.classList.remove('active'));
+      }
+      window.addEventListener('scroll', onScroll);
+      // Smooth scroll for nav links
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            window.scrollTo({
+              top: target.offsetTop - 70,
+              behavior: 'smooth'
+            });
+            // Remove .active from all, add to clicked
+            links.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body class="bg-white text-slate-800 font-sans">
+  <!-- Main Navbar (identical to index.html) -->
+  <nav class="w-full sticky top-0 z-50 bg-white/80 backdrop-blur shadow-md transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6" /></svg>
+          <span class="font-bold text-2xl text-blue-700">EtudGhana</span>
+        </a>
+      </div>
+      <div class="flex items-center space-x-8">
+        <a href="index.html" class="text-base font-bold px-4 py-2 rounded tracking-wider uppercase transition hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-blue-700">Accueil</a>
+        <a href="ecole.html" class="text-base font-bold px-4 py-2 rounded tracking-wider uppercase transition hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-blue-700">École de Langue</a>
+        <a href="universite.html" class="text-base font-bold px-4 py-2 rounded tracking-wider uppercase transition hover:underline hover:underline-offset-8 hover:decoration-2 text-blue-700 border-b-2 border-blue-700">Université</a>
+        <a href="procedure.html" class="text-base font-bold px-4 py-2 rounded tracking-wider uppercase transition hover:underline hover:underline-offset-8 hover:decoration-2 hover:text-blue-700">Procédure</a>
+        <a href="contact.html" class="ml-6 px-6 py-2 rounded bg-blue-600 text-white font-semibold tracking-wider uppercase shadow hover:bg-blue-700 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Horizontal Section Navigation -->
+  <nav class="bg-white py-2 sticky top-[64px] z-40 border-b border-blue-100">
+    <div class="max-w-7xl mx-auto flex flex-nowrap gap-2 px-2 overflow-x-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-blue-50">
+      <a href="#chartered-private" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Chartered Private Tertiary Institution</a>
+      <a href="#distance-learning" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Distance Learning Institution</a>
+      <a href="#private-college-education" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Private College of Education</a>
+      <a href="#private-nurses-training" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Private Nurses Training College</a>
+      <a href="#private-polytechnic" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Private Polytechnic</a>
+      <a href="#private-tertiary-hnd" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Private Tertiary Institution (HND/Degree)</a>
+      <a href="#public-college-education" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Public College of Education</a>
+      <a href="#public-nurses-training" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Public Nurses Training College</a>
+      <a href="#public-technical-university" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Public Technical University</a>
+      <a href="#public-university" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Public University</a>
+      <a href="#tutorial-college" class="section-nav-link px-4 py-2 font-medium text-blue-700 bg-white transition whitespace-nowrap border-none outline-none rounded-2xl" >Tutorial College</a>
+    </div>
+    <style>
+      .section-nav-link {
+        border-radius: 0.75rem;
+        position: relative;
+        box-shadow: none;
+      }
+      .section-nav-link.active::after {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        margin-top: 4px;
+        width: 70%;
+        height: 3px;
+        border-radius: 2px;
+        background: #2563eb;
+        transition: width 0.2s;
+      }
+      .section-nav-link.active {
+        color: #2563eb;
+        background: #f1f5fd;
+      }
+      .section-nav-link:hover, .section-nav-link:focus {
+        background: #f1f5fd;
+        color: #2563eb;
+      }
+      .scrollbar-thin {
+        scrollbar-width: thin;
+      }
+      .scrollbar-thumb-blue-200::-webkit-scrollbar-thumb {
+        background: #bfdbfe;
+        border-radius: 8px;
+      }
+      .scrollbar-track-blue-50::-webkit-scrollbar-track {
+        background: #eff6ff;
+      }
+    </style>
+  </nav>
+
+  <!-- Sections -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <section id="chartered-private" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Chartered Private Tertiary Institution</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2"><a href="https://aci.edu.gh" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Akrofi-Christaller Institute of Theology, Mission and Culture</a></td>
+              <td class="px-4 py-2">Akropong</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">2.</td>
+              <td class="px-4 py-2"><a href="https://www.anuc.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">All Nations University</a></td>
+              <td class="px-4 py-2">Koforidua</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">3.</td>
+              <td class="px-4 py-2"><a href="https://www.ashesi.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Ashesi University</a></td>
+              <td class="px-4 py-2">Berekuso</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">4.</td>
+              <td class="px-4 py-2"><a href="https://www.cug.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Catholic University</a></td>
+              <td class="px-4 py-2">Fiapre</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">5.</td>
+              <td class="px-4 py-2"><a href="https://www.central.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Central University</a></td>
+              <td class="px-4 py-2">Miotso</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">6.</td>
+              <td class="px-4 py-2"><a href="https://www.mucg.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Methodist University</a></td>
+              <td class="px-4 py-2">Accra</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">7.</td>
+              <td class="px-4 py-2"><a href="https://www.pu.ac.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Pentecost University</a></td>
+              <td class="px-4 py-2">Sowutuom</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">8.</td>
+              <td class="px-4 py-2"><a href="https://www.presbyuniversity.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Presbyterian University</a></td>
+              <td class="px-4 py-2">Abetifi</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">9.</td>
+              <td class="px-4 py-2"><a href="https://www.tlts.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Trinity Theological Seminary</a></td>
+              <td class="px-4 py-2">East Legon</td>
+            </tr>
+            <tr class="hover:bg-blue-50 cursor-pointer transition-all duration-150" tabindex="0">
+              <td class="px-4 py-2">10.</td>
+              <td class="px-4 py-2"><a href="https://www.vvu.edu.gh/" target="_blank" rel="noopener" class="text-blue-700 underline hover:text-blue-900">Valley View University</a></td>
+              <td class="px-4 py-2">Oyibi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="distance-learning" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Distance Learning Institution</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Start</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">End</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2"><a href="https://10web.laweh.edu.gh" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline hover:text-blue-900">Laweh Open University College</a></td>
+              <td class="px-4 py-2">Accra</td>
+              <td class="px-4 py-2">14 Sep 2018</td>
+              <td class="px-4 py-2">14 Sep 2023</td>
+              <td class="px-4 py-2">Open University of Tanzania</td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">2.</td>
+              <td class="px-4 py-2"><a href="https://ghanayello.com/company/Laweh_Open_University_College" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline hover:text-blue-900">University of Applied Management</a></td>
+              <td class="px-4 py-2">Kwabenya</td>
+              <td class="px-4 py-2">1 Apr 2022</td>
+              <td class="px-4 py-2">31 Mar 2027</td>
+              <td class="px-4 py-2">University of Applied Management, Germany</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="private-college-education" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Private College of Education</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Start</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">End</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2"><a href="https://ctce-ghana.com" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline hover:text-blue-900">Christ The Teacher College of Education, Kumasi</a></td>
+              <td class="px-4 py-2">Kumasi</td>
+              <td class="px-4 py-2">1 Jul 2019</td>
+              <td class="px-4 py-2">30 Jun 2024</td>
+              <td class="px-4 py-2">University of Cape Coast</td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">2.</td>
+              <td class="px-4 py-2"><a href="https://www.jackson.edu.gh" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline hover:text-blue-900">Jackson College of Education, Kumasi</a></td>
+              <td class="px-4 py-2">Kumasi</td>
+              <td class="px-4 py-2">4 Jan 2019</td>
+              <td class="px-4 py-2">3 Jan 2024</td>
+              <td class="px-4 py-2">University of Education</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="private-nurses-training" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Private Nurses Training College</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Start</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">End</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2">Amen Professional Institute, Kumasi</td>
+              <td class="px-4 py-2">Kumasi</td>
+              <td class="px-4 py-2">1 Apr 2021</td>
+              <td class="px-4 py-2">31 Mar 2024</td>
+              <td class="px-4 py-2">University for Development Studies</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://amencollege.sdsghana.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">amencollege.sdsghana.com</a>
+                  <span>|</span> <a href="https://www.facebook.com/people/Amen-Professional-College/100063781964073/" target="_blank" class="text-blue-700 underline hover:text-blue-900">Facebook</a>
+                  <span>|</span> <a href="https://ucc.edu.gh/" target="_blank" class="text-blue-700 underline hover:text-blue-900">University of Cape Coast</a>
+                  <span>|</span> <a href="https://margretmarquartcatholicntc.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">margretmarquartcatholicntc.com</a>
+                  <span>|</span> <a href="https://amencollege.sdsghana.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">amencollege.sdsghana.com</a>
+                  <span>|</span> <a href="https://gtec.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">gtec.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">2.</td>
+              <td class="px-4 py-2">Flosam Institute of Nursing and Allied Health Sciences, Suhum</td>
+              <td class="px-4 py-2">Suhum</td>
+              <td class="px-4 py-2">12 Oct 2020</td>
+              <td class="px-4 py-2">11 Oct 2023</td>
+              <td class="px-4 py-2">University of Cape Coast</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://flosaminstitute.org" target="_blank" class="text-blue-700 underline hover:text-blue-900">flosaminstitute.org</a>
+                  <span>|</span> <a href="https://margretmarquartcatholicntc.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">margretmarquartcatholicntc.com</a>
+                  <span>|</span> <a href="https://flosaminstitute.org" target="_blank" class="text-blue-700 underline hover:text-blue-900">flosaminstitute.org</a>
+                  <span>|</span> <a href="https://gtec.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">gtec.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">3.</td>
+              <td class="px-4 py-2">Hopkins Health Training Institute, Oda</td>
+              <td class="px-4 py-2">Oda</td>
+              <td class="px-4 py-2">15 Aug 2018</td>
+              <td class="px-4 py-2">14 Aug 2024</td>
+              <td class="px-4 py-2">University of Cape Coast</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Réseaux :</span> <a href="https://healthtraining.gov.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">healthtraining.gov.gh</a>
+                  <span>|</span> <a href="https://www.facebook.com/uccghofficial/" target="_blank" class="text-blue-700 underline hover:text-blue-900">Facebook</a>
+                  <span>|</span> <a href="https://twitter.com/ucc_gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">X (Twitter)</a>
+                  <span>|</span> <a href="https://ucc.edu.gh/" target="_blank" class="text-blue-700 underline hover:text-blue-900">University of Cape Coast</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">4.</td>
+              <td class="px-4 py-2">Islamic Nursing Training College</td>
+              <td class="px-4 py-2">Kokrobite</td>
+              <td class="px-4 py-2">1 Jan 2022</td>
+              <td class="px-4 py-2">31 Dec 2024</td>
+              <td class="px-4 py-2">University of Cape Coast</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://islamicnursingtraining.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">islamicnursingtraining.com</a>
+                  <span>|</span> <a href="https://amencollege.sdsghana.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">amencollege.sdsghana.com</a>
+                  <span>|</span> <a href="https://islamicnursingtraining.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">islamicnursingtraining.com</a>
+                  <span>|</span> <a href="https://www.facebook.com/islamicnursingtrainingcollege/" target="_blank" class="text-blue-700 underline hover:text-blue-900">Facebook</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">5.</td>
+              <td class="px-4 py-2">Margaret Marquart Catholic Nurses Training College, Kpando</td>
+              <td class="px-4 py-2">Kpando</td>
+              <td class="px-4 py-2">1 Jan 2020</td>
+              <td class="px-4 py-2">31 Dec 2022</td>
+              <td class="px-4 py-2">University for Development Studies</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://margretmarquartcatholicntc.com" target="_blank" class="text-blue-700 underline hover:text-blue-900">margretmarquartcatholicntc.com</a>
+                  <span>|</span> <a href="https://www.tiktok.com/@margretmarquartcatholicntc" target="_blank" class="text-blue-700 underline hover:text-blue-900">TikTok</a>
+                  <span>|</span> <a href="https://gtec.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">gtec.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">6.</td>
+              <td class="px-4 py-2">Miezah College of Health Suame-Kumasi</td>
+              <td class="px-4 py-2">Suame-Kumasi</td>
+              <td class="px-4 py-2">12 Oct 2020</td>
+              <td class="px-4 py-2">11 Oct 2023</td>
+              <td class="px-4 py-2">University of Cape Coast</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://mch.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">mch.edu.gh</a>
+                  <span>|</span> <a href="https://www.timeshighereducation.com/world-university-rankings/miezah-college-health" target="_blank" class="text-blue-700 underline hover:text-blue-900">Times Higher Education (THE)</a>
+                  <span>|</span> <a href="https://mch.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">mch.edu.gh</a>
+                  <span>|</span> <a href="https://www.facebook.com/miezahcollegeofhealth/" target="_blank" class="text-blue-700 underline hover:text-blue-900">Facebook</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">7.</td>
+              <td class="px-4 py-2"><a href="https://narhbitacollege.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">Narh-Bita College</a></td>
+              <td class="px-4 py-2">Tema</td>
+              <td class="px-4 py-2">1 Sep 2018</td>
+              <td class="px-4 py-2">31 Aug 2023</td>
+              <td class="px-4 py-2">University of Ghana and Kwame Nkrumah University of Science and Technology</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="private-polytechnic" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Private Polytechnic</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Start</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">End</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2">Archbishop Porter Girls Polytechnic</td>
+              <td class="px-4 py-2">Elmina</td>
+              <td class="px-4 py-2">1 Apr 2019</td>
+              <td class="px-4 py-2">31 Mar 2024</td>
+              <td class="px-4 py-2">Commission for Technical and Vocational Education and Training</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="private-tertiary-hnd" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Private Tertiary Institution (HND/Degree)</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Start</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">End</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">1.</td><td class="px-4 py-2">Academic City College</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">21 Dec 2022</td><td class="px-4 py-2">20 Dec 2028</td><td class="px-4 py-2">University of Cape Coast and University of Mine and Technology</td></tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://acity.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">acity.edu.gh</a>
+                  <span>|</span> <a href="https://www.businessghana.com/site/directory/tertiary-institutions/1532/Academic-City-University-College" target="_blank" class="text-blue-700 underline hover:text-blue-900">BusinessGhana</a>
+                  <span>|</span> <a href="https://www.reddit.com/search/?q=Academic%20City%20University" target="_blank" class="text-blue-700 underline hover:text-blue-900">Reddit</a>
+                  <span>|</span> <a href="https://www.acity.edu.gh/" target="_blank" class="text-blue-700 underline hover:text-blue-900">Academic City University</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">2.</td><td class="px-4 py-2"><a href="https://abs.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">Accra Business School</a></td><td class="px-4 py-2">Spintex</td><td class="px-4 py-2">1 Dec 2021</td><td class="px-4 py-2">30 Nov 2026</td><td class="px-4 py-2">Kwame Nkrumah University of Science and Technology</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">3.</td><td class="px-4 py-2">Accra College of Medicine</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">23 Nov 2018</td><td class="px-4 py-2">22 Nov 2023</td><td class="px-4 py-2">University of Ghana</td></tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://acm.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">acm.edu.gh</a>
+                  <span>|</span> <a href="https://www.accm.edu.gh/" target="_blank" class="text-blue-700 underline hover:text-blue-900">Accra College of Medicine</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/Accra_College_of_Medicine" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">4.</td><td class="px-4 py-2">Advance Global College, Tamale</td><td class="px-4 py-2">Tamale</td><td class="px-4 py-2">12 Oct 2020</td><td class="px-4 py-2">11 Oct 2023</td><td class="px-4 py-2">Commission for Technical and Vocational Education and Training</td></tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://agc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">agc.edu.gh</a>
+                  <span>|</span> <a href="https://www.reddit.com/search/?q=Advance%20Global%20College" target="_blank" class="text-blue-700 underline hover:text-blue-900">Reddit</a>
+                  <span>|</span> <a href="https://agc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">agc.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">5.</td><td class="px-4 py-2">Advanced Business College (ABC)</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">1 Jan 2018</td><td class="px-4 py-2">31 Dec 2022</td><td class="px-4 py-2">University of Education</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">6.</td><td class="px-4 py-2">African University College of Communication, Accra</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">1 Jan 2020</td><td class="px-4 py-2">31 Dec 2024</td><td class="px-4 py-2">University of Ghana</td></tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://aucc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">aucc.edu.gh</a>
+                  <span>|</span> <a href="https://agc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">agc.edu.gh</a>
+                  <span>|</span> <a href="https://aucc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">aucc.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/African_University_College_of_Communications" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">7.</td><td class="px-4 py-2">Akim State College</td><td class="px-4 py-2">Akim Oda</td><td class="px-4 py-2">1 Apr 2018</td><td class="px-4 py-2">31 Mar 2023</td><td class="px-4 py-2">Kwame Nkrumah University of Science and Technology</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">8.</td><td class="px-4 py-2">Anglican University College of Technology</td><td class="px-4 py-2">Kumasi</td><td class="px-4 py-2">1 Jan 2020</td><td class="px-4 py-2">31 Dec 2022</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">9.</td><td class="px-4 py-2">AsanSka College of Design and Technology</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">1 Dec 2019</td><td class="px-4 py-2">30 Nov 2024</td><td class="px-4 py-2">University of Cape Coast, University of Education, Winneba</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">10.</td><td class="px-4 py-2">Bunso Cocoa College, Bunso</td><td class="px-4 py-2">Bunso</td><td class="px-4 py-2">1 Apr 2022</td><td class="px-4 py-2">31 Mar 2025</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">11.</td><td class="px-4 py-2">Central College of Science and Technology</td><td class="px-4 py-2">Agona Swedru</td><td class="px-4 py-2">1 Apr 2019</td><td class="px-4 py-2">31 Mar 2024</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">12.</td><td class="px-4 py-2">Catholic Institute of Business and Technology</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">1 Sep 2019</td><td class="px-4 py-2">31 Aug 2024</td><td class="px-4 py-2">University of Ghana, Kwame Nkrumah University of Science and Technology</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">13.</td><td class="px-4 py-2">China Europe International Business School (Africa Campus)</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">1 Sep 2021</td><td class="px-4 py-2">31 Aug 2026</td><td class="px-4 py-2">China Europe International Business School</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">14.</td><td class="px-4 py-2">College of Integrated Healthcare</td><td class="px-4 py-2">Obuasi</td><td class="px-4 py-2">1 Jul 2019</td><td class="px-4 py-2">30 Jun 2024</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">15.</td><td class="px-4 py-2">Christian Service University College</td><td class="px-4 py-2">Kumasi</td><td class="px-4 py-2">1 Sep 2019</td><td class="px-4 py-2">31 Aug 2024</td><td class="px-4 py-2">University of Ghana and University of Cape Coast</td></tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://csuc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">csuc.edu.gh</a>
+                  <span>|</span> <a href="https://csuc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">csuc.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">16.</td><td class="px-4 py-2">Data Link Institute of Business and Technology</td><td class="px-4 py-2">Tema</td><td class="px-4 py-2">1 Jan 2020</td><td class="px-4 py-2">31 Dec 2024</td><td class="px-4 py-2">Kwame Nkrumah University of Science and Technology, Northampton University, Jiangsu University of Science and Technology, China</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">17.</td><td class="px-4 py-2">Deeper Life International Bible Training College</td><td class="px-4 py-2">Brofoyedru-Kumasi</td><td class="px-4 py-2">1 Aug 2020</td><td class="px-4 py-2">31 Jul 2023</td><td class="px-4 py-2">Anchors University, Nigeria</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="public-college-education" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Public College of Education</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">1.</td><td class="px-4 py-2">Abetifi College of Education, Abetifi</td><td class="px-4 py-2">Abetifi</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">2.</td><td class="px-4 py-2">Accra College of Education, Accra</td><td class="px-4 py-2">Accra</td><td class="px-4 py-2">University of Ghana</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">3.</td><td class="px-4 py-2">Ada College of Education, Ada</td><td class="px-4 py-2">Ada</td><td class="px-4 py-2">University of Education, Winneba</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">4.</td><td class="px-4 py-2">Agogo Presbyterian College of Education, Agogo</td><td class="px-4 py-2">Agogo</td><td class="px-4 py-2">University of Education, Winneba</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">5.</td><td class="px-4 py-2">Akatsi College of Education, Akatsi</td><td class="px-4 py-2">Akatsi</td><td class="px-4 py-2">University of Education, Winneba</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">6.</td><td class="px-4 py-2">Akrokerri College of Education, Akrokerri</td><td class="px-4 py-2">Akrokerri</td><td class="px-4 py-2">Kwame Nkrumah University of Science and Technology</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">7.</td><td class="px-4 py-2">Atebubu College of Education, Atebubu</td><td class="px-4 py-2">Atebubu</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">8.</td><td class="px-4 py-2">Bagabaga College of Education</td><td class="px-4 py-2">Bagabaga</td><td class="px-4 py-2">University of Education, Winneba</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="public-nurses-training" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Public Nurses Training College</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">1.</td><td class="px-4 py-2">Assinman Nursing and Midwifery Training College, Assin Fosu</td><td class="px-4 py-2">Assin Fosu</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">2.</td><td class="px-4 py-2">College of Health, Sefwi Asafo</td><td class="px-4 py-2">Sefwi Asafo</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">3.</td><td class="px-4 py-2">College of Health, Yamfo</td><td class="px-4 py-2">Yamfo</td><td class="px-4 py-2">University of Cape Coast</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">4.</td><td class="px-4 py-2">Community Health Nurses Training School, Navrongo</td><td class="px-4 py-2">Navrongo</td><td class="px-4 py-2">University for Development Studies</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">5.</td><td class="px-4 py-2">Community Health Nursing Training School, Jirapa</td><td class="px-4 py-2">Jirapa</td><td class="px-4 py-2">Kwame Nkrumah University of Science and Technology</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">6.</td><td class="px-4 py-2">Holy Family Nurses and Midwifery Training College, Berekum and Drobo</td><td class="px-4 py-2">Berekum and Drobo</td><td class="px-4 py-2">Kwame Nkrumah University of Science and Technology</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">7.</td><td class="px-4 py-2">Holy Family Nurses Training College, Nkawkaw</td><td class="px-4 py-2">Nkawkaw</td><td class="px-4 py-2">Kwame Nkrumah University of Science and Technology</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="public-technical-university" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Public Technical University</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2">Kumasi Technical University</td>
+              <td class="px-4 py-2">Kumasi</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://kstu.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">kstu.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/Kumasi_Technical_University" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                  <span>|</span> <a href="https://archive.kstu.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">archive.kstu.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">2.</td>
+              <td class="px-4 py-2">Accra Technical University</td>
+              <td class="px-4 py-2">Accra</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://atu.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">atu.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/Accra_Technical_University" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">3.</td>
+              <td class="px-4 py-2">Tamale Technical University</td>
+              <td class="px-4 py-2">Tamale</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://tatu.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">tatu.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/Tamale_Technical_University" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">4.</td>
+              <td class="px-4 py-2">Bolgatanga Technical University</td>
+              <td class="px-4 py-2">Bolgatanga</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://bolgatu.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">bolgatu.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/Bolgatanga_Technical_University" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                  <span>|</span> <a href="https://www.reddit.com/search/?q=Bolgatanga%20Technical%20University" target="_blank" class="text-blue-700 underline hover:text-blue-900">Reddit</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">6.</td>
+              <td class="px-4 py-2">Ho Technical University</td>
+              <td class="px-4 py-2">Ho</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://htu.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">htu.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/Ho_Technical_University" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">7.</td><td class="px-4 py-2">Takoradi Technical University</td><td class="px-4 py-2">Takoradi</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="public-university" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Public University</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2">Akenten Appiah-Menka University of Skills Training and Entrepreneurial Development (AAMUSTED)</td>
+              <td class="px-4 py-2">Kumasi</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Résumé Wikipédia :</span> <a href="https://en.wikipedia.org/wiki/Akenten_Appiah-Menka_University_of_Skills_Training_and_Entrepreneurial_Development" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                  <span>|</span> <a href="https://www.reddit.com/search/?q=AAMUSTED" target="_blank" class="text-blue-700 underline hover:text-blue-900">Reddit</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">2.</td>
+              <td class="px-4 py-2">C.K. Tedam University of Technology and Applied Sciences</td>
+              <td class="px-4 py-2">Navrongo</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Annuaire :</span> <a href="https://www.ghanaweb.com/GhanaHomePage/education/C-K-Tedam-University-of-Technology-and-Applied-Sciences-1002" target="_blank" class="text-blue-700 underline hover:text-blue-900">GhanaWeb</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">3.</td>
+              <td class="px-4 py-2">Ghana Communication Technology University (GCTU)</td>
+              <td class="px-4 py-2">Tesano</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://gctu.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">gctu.edu.gh</a>
+                  <span>|</span> <a href="https://www.reddit.com/search/?q=GCTU" target="_blank" class="text-blue-700 underline hover:text-blue-900">Reddit</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">4.</td>
+              <td class="px-4 py-2">Ghana Institute of Management and Public Administration, Achimota</td>
+              <td class="px-4 py-2">Achimota</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://gimpa.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">gimpa.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">5.</td>
+              <td class="px-4 py-2">Kwame Nkrumah University of Science and Technology (KNUST)</td>
+              <td class="px-4 py-2">Kumasi</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://www.knust.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">KNUST</a>
+                  <span>|</span> <a href="https://www.reddit.com/search/?q=KNUST" target="_blank" class="text-blue-700 underline hover:text-blue-900">Reddit</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">6.</td>
+              <td class="px-4 py-2">S.D. Dombo University of Business and Integrated Development Studies (UBIDS)</td>
+              <td class="px-4 py-2">Wa</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://ubids.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">ubids.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/S._D._Dombo_University_of_Business_and_Integrated_Development_Studies" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">7.</td>
+              <td class="px-4 py-2">University for Development Studies (UDS), Tamale</td>
+              <td class="px-4 py-2">Tamale</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://uds.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">University of Development Studies</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/University_for_Development_Studies" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">8.</td>
+              <td class="px-4 py-2">University of Cape Coast (UCC)</td>
+              <td class="px-4 py-2">Cape Coast</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://ucc.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">University of Cape Coast</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/University_of_Cape_Coast" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">9.</td>
+              <td class="px-4 py-2">University of Education (UEW)</td>
+              <td class="px-4 py-2">Winneba</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Résumé Wikipédia :</span> <a href="https://en.wikipedia.org/wiki/University_of_Education,_Winneba" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">10.</td>
+              <td class="px-4 py-2">University of Energy and Natural Resources (UENR)</td>
+              <td class="px-4 py-2">Sunyani</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://uenr.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">uenr.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/University_of_Energy_and_Natural_Resources" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">11.</td>
+              <td class="px-4 py-2">University of Environment and Sustainable Development (UESD)</td>
+              <td class="px-4 py-2">Somanya</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://uesd.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">uesd.edu.gh</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">12.</td>
+              <td class="px-4 py-2">University of Ghana (UG)</td>
+              <td class="px-4 py-2">Legon</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Résumé Wikipédia :</span> <a href="https://en.wikipedia.org/wiki/University_of_Ghana" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">13.</td>
+              <td class="px-4 py-2">University of Health and Allied Science (UHAS)</td>
+              <td class="px-4 py-2">Ho</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://uhas.edu.gh" target="_blank" class="text-blue-700 underline hover:text-blue-900">uhas.edu.gh</a>
+                  <span>|</span> <a href="https://en.wikipedia.org/wiki/University_of_Health_and_Allied_Sciences" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">14.</td>
+              <td class="px-4 py-2">University of Mines and Technology (UMAT)</td>
+              <td class="px-4 py-2">Tarkwa</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Annuaire :</span> <a href="https://www.ghanaweb.com/GhanaHomePage/education/University-of-Mines-and-Technology-UMaT-1003" target="_blank" class="text-blue-700 underline hover:text-blue-900">GhanaWeb</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">15.</td>
+              <td class="px-4 py-2">University of Professional Studies (UPSA)</td>
+              <td class="px-4 py-2">Legon</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="2">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Résumé Wikipédia :</span> <a href="https://en.wikipedia.org/wiki/University_of_Professional_Studies" target="_blank" class="text-blue-700 underline hover:text-blue-900">Wikipedia</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="registered-foreign" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Registered Foreign Institution</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Start</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">End</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Represented in Ghana by</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">1.</td><td class="px-4 py-2">Business University of Costa Rica (Univeridad Empresarial de Costa Rica(UNEM) Costa Rica</td><td class="px-4 py-2">Kumasi</td><td class="px-4 py-2">1 Sep 2020</td><td class="px-4 py-2">31 Aug 2023</td><td class="px-4 py-2">OAA Consulting Limited, Kumasi</td></tr>
+            <tr class="hover:bg-blue-50"><td class="px-4 py-2">2.</td><td class="px-4 py-2">Centre for Intercontinental Education</td><td class="px-4 py-2">Off Adenta-Dodowa Main Road</td><td class="px-4 py-2">17 May 2021</td><td class="px-4 py-2">16 May 2024</td><td class="px-4 py-2">Malaysia University of Science and Technology, Malaysia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="tutorial-college" class="py-10">
+      <h2 class="text-2xl font-bold mb-6 text-blue-800">Tutorial College</h2>
+      <div class="overflow-x-auto rounded-xl shadow">
+        <table class="min-w-full bg-white text-left border border-blue-100">
+          <thead class="bg-blue-50">
+            <tr>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">No</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Name of Institution</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Location</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Start</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">End</th>
+              <th class="px-4 py-3 font-semibold text-blue-800 border-b border-blue-100">Affiliation</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-blue-50">
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">1.</td>
+              <td class="px-4 py-2">Concord Business College</td>
+              <td class="px-4 py-2">Achimota</td>
+              <td class="px-4 py-2">1 Apr 2019</td>
+              <td class="px-4 py-2">31 Mar 2024</td>
+              <td class="px-4 py-2">Commission for Technical and Vocational Education and Training</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="#" class="text-blue-700 underline hover:text-blue-900">(à compléter)</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">2.</td>
+              <td class="px-4 py-2">IPMC Ghana (Intercom Programming & Manufacturing Company)</td>
+              <td class="px-4 py-2">Adabraka</td>
+              <td class="px-4 py-2">1 Jul 2018</td>
+              <td class="px-4 py-2">30 Jun 2023</td>
+              <td class="px-4 py-2">NCC Education Limited, UK</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://ipmcghana.com/" target="_blank" class="text-blue-700 underline hover:text-blue-900">ipmcghana.com</a>
+                  <span>|</span> <a href="https://www.ibmandj.org/" target="_blank" class="text-blue-700 underline hover:text-blue-900">ibmandj.org</a>
+                  <span>|</span> <a href="https://ipmctraining.com/" target="_blank" class="text-blue-700 underline hover:text-blue-900">ipmctraining.com</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">3.</td>
+              <td class="px-4 py-2">Institute of Business Management & Journalism (IBM&J)</td>
+              <td class="px-4 py-2">Kumasi</td>
+              <td class="px-4 py-2">1 Sep 2019</td>
+              <td class="px-4 py-2">31 Aug 2024</td>
+              <td class="px-4 py-2">Commission for Technical and Vocational Education and Training</td>
+            </tr>
+            <tr class="bg-blue-50/30">
+              <td></td>
+              <td colspan="5">
+                <div class="flex flex-wrap gap-3 text-sm py-2">
+                  <span class="font-semibold">Site officiel :</span> <a href="https://www.ibmandj.org/" target="_blank" class="text-blue-700 underline hover:text-blue-900">ibmandj.org</a>
+                  <span>|</span> <a href="https://www.ghanaweb.com/GhanaHomePage/education/Institute-of-Business-Management-Journalism-IBM-J-1004" target="_blank" class="text-blue-700 underline hover:text-blue-900">ghanaweb.com</a>
+                  <span>|</span> <a href="https://www.ghanayello.com/company/Institute_of_Business_Management_and_Journalism_IBM_J_" target="_blank" class="text-blue-700 underline hover:text-blue-900">ghanayello.com</a>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-blue-50">
+              <td class="px-4 py-2">4.</td>
+              <td class="px-4 py-2"><a href="https://www.pc.edu.gh/" target="_blank" class="text-blue-700 underline hover:text-blue-900">Pinnacle College</a></td>
+              <td class="px-4 py-2">Achimota</td>
+              <td class="px-4 py-2">1 Sep 2022</td>
+              <td class="px-4 py-2">31 Aug 2027</td>
+              <td class="px-4 py-2">ICM, UK</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Commentaires concis en français pour la collaboration -->
+  <!--
+  - Navbar cohérente avec le site principal
+  - Section principale avec titre, sous-titre et grille responsive
+  - Carte université : icône, nom, ville, dates, affiliation, badge
+  - Utiliser différentes icônes pour chaque type d'institution sur les autres pages
+  - Ajouter les autres universités en suivant ce modèle
+  -->
+  <script>
+document.querySelectorAll('tbody tr').forEach(row => {
+  row.addEventListener('click', () => {
+    row.classList.add('ring', 'ring-blue-400');
+    setTimeout(() => row.classList.remove('ring', 'ring-blue-400'), 200);
+  });
+  row.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      row.click();
+    }
+  });
+});
+</script>
++   <!-- PDF Download Section -->
++   <section class="py-10">
++     <div class="max-w-2xl mx-auto bg-blue-50 border border-blue-200 rounded-2xl shadow p-8 flex flex-col items-center">
++       <p class="text-lg font-semibold text-blue-800 mb-4 text-center">Si vous ne trouvez pas votre université sur cette page, téléchargez ce PDF :</p>
++       <a href="GHANA%20TERTIARY%20EDUCATION%20COMMISSION%20CURRENT%20INSTITUTIONS%20.pdf" download class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow hover:bg-blue-700 transition">
++         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" /></svg>
++         Télécharger le PDF
++       </a>
++     </div>
++   </section>
+</body>
+</html> 
